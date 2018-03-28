@@ -1,0 +1,24 @@
+<table id="kombuchas" class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Probiotic content</th>
+      <th>Keg level</th>
+      <th>Pour a fresh pint!
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let currentKombucha of childKombuchaList">
+      <td>{{currentKombucha.name}}</td>
+      <td>{{currentKombucha.brand}}</td>
+      <td>{{currentKombucha.price | currency }}</td>
+      <td style="text-align:center">{{currentKombucha.probiotic}}</td>
+      <td>{{currentKombucha.pintLevel}} pints left</td>
+      <td><button (click)="pourPint(currentKombucha)">Pour!</button></td>
+      <td><button (click)="editKombucha(currentKombucha)">Edit!</button></td>
+    </tr>
+  </tbody>
+</table>

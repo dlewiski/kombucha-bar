@@ -1,4 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <div style="text-align:center">
   <div class="jumbotron">
       <h1>
@@ -7,49 +8,23 @@
     </div>
   <img width="300" alt="Kombucha batches with a dapper gentleman" src="http://bistroonesix.com/wp-content/uploads/2015/12/Kombucha-Mike-Sommer.png"><br><br>
 </div>
+
 <div class="container">
   <h2 style="text-align:center">Enjoy our natural, kombuchas.  More like kombu-booom! </h2><br>
 
-  <table id="kombuchas" class="table table-hover">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Brand</th>
-        <th>Price</th>
-        <th>Probiotic content</th>
-        <th>Keg level</th>
-        <th>Pour a fresh pint!
-        <th>Edit</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let currentKombucha of kombuchas">
-        <td>{{currentKombucha.name}}</td>
-        <td>{{currentKombucha.brand}}</td>
-        <td>{{currentKombucha.price | currency }}</td>
-        <td>{{currentKombucha.probiotic}}</td>
-        <td>{{currentKombucha.pintLevel}} pints left</td>
-        <td><button (click)="pourPint(currentKombucha)">Pour!</button></td>
-        <td><button (click)="editKombucha(currentKombucha)">Edit!</button></td>
-      </tr>
-    </tbody>
-  </table>
-  <div *ngIf="selectedKombucha">
-    <h3>Edit {{selectedKombucha.name}}</h3>
-    <label for="nameEdit">Name:</label>
-    <input type="text" id="nameEdit" [(ngModel)]="selectedKombucha.name">
-    <label for="brandEdit">Brand:</label>
-    <input type="text" id="brandEdit" [(ngModel)]="selectedKombucha.brand">
-    <label for="priceEdit">Price:</label>
-    <input type="text" id="priceEdit" [(ngModel)]="selectedKombucha.price">
-    <label for="probioticEdit">Probiotic:</label>
-    <input type="text" id="probioticEdit" [(ngModel)]="selectedKombucha.probiotic">
-    <button (click)="editKombucha()">Done Editing!</button>
-  </div>
+  <app-kombucha-list [childKombuchaList]="kombuchas" (clickedPourPint)="pourPint($event)" (clickedEditKombucha)="editKombucha($event)"></app-kombucha-list>
+
+  <app-add-kombucha [childKambuchaList]="kombuchas"></app-add-kombucha>
+
+  <app-edit-kombucha [childSelectedKombucha]="selectedKombucha" (clickedDone)="finishedEditing()"></app-edit-kombucha>
 
   <div *ngFor="let kombucha of kombuchas">
     <div *ngIf="kombucha.pintLevel <= 120">
-      <h3 style="text-align:center">Time to restock {{kombucha.name}}!!!</h3>
+      <h3 style="text-align:center">Time to restock <b>{{kombucha.name}}!!!</b></h3>
     </div>
   </div>
+
+  <br>
+  <button (click)="addKombucha()">Add new Kombucha!</button>
+  <button (click)="saveNewKombucha()">Save new Kombucha!</button>
 </div>

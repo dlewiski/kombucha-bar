@@ -4,11 +4,17 @@ import { FormsModule }  from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { AddKombuchaComponent } from './add-kombucha/add-kombucha.component';
+import { EditKombuchaComponent } from './edit-kombucha/edit-kombucha.component';
+import { KombuchaListComponent } from './kombucha-list/kombucha-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddKombuchaComponent,
+    EditKombuchaComponent,
+    KombuchaListComponent
   ],
   imports: [
     BrowserModule,

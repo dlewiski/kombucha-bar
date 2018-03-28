@@ -1,0 +1,12 @@
+<div *ngIf="childSelectedKombucha">
+  <h3>Edit {{childSelectedKombucha.name}}</h3>
+  <label for="nameEdit">Name:</label>
+  <input type="text" id="nameEdit" [(ngModel)]="childSelectedKombucha.name">
+  <label for="brandEdit">Brand:</label>
+  <input type="text" id="brandEdit" [(ngModel)]="childSelectedKombucha.brand">
+  <label for="priceEdit">Price:</label>
+  <input type="text" id="priceEdit" [(ngModel)]="childSelectedKombucha.price">
+  <label for="probioticEdit">Probiotic:</label>
+  <input type="text" id="probioticEdit" [(ngModel)]="childSelectedKombucha.probiotic">
+  <button (click)="finishedEditing()">Done Editing!</button>
+</div>
