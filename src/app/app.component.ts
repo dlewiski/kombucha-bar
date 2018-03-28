@@ -13,6 +13,17 @@ export class AppComponent {
   kombuchas: Kombucha[] = [
     new Kombucha('Liquid Air', 'High As a Sky', 4.50, 30),
     new Kombucha('2 Day Tea Brew', 'NoPo', 2, 10)
-  ]
+  ];
+  selectedKombucha = null;
+  pouredKombucha = null;
+
+  editKombucha(currentKombucha){
+    this.selectedKombucha = currentKombucha;
+  }
+
+  pourPint(currentKombucha){
+    this.pouredKombucha = currentKombucha;
+    this.pouredKombucha.pintLevel--;
+  }
 
 }

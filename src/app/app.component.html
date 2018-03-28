@@ -1,29 +1,55 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <div class="jumbotron">
+      <h1>
+        Welcome to {{ title }}!
+      </h1>
+    </div>
+  <img width="300" alt="Angular Logo" src="http://bistroonesix.com/wp-content/uploads/2015/12/Kombucha-Mike-Sommer.png"><br><br>
 </div>
-<h2>Enjoy our natural, kombuchas.  More like kombubooom! </h2>
+<div class="container">
+  <h2 style="text-align:center">Enjoy our natural, kombuchas.  More like kombubooom! </h2><br>
 
-<table id="kombuchas" class="table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Brand</th>
-      <th>Price</th>
-      <th>Probiotic content</th>
-      <th>Edit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let currentKombucha of kombuchas">
-      <td>{{currentKombucha.name}}</td>
-      <td>{{currentKombucha.brand}}</td>
-      <td>{{currentKombucha.price}}</td>
-      <td>{{currentKombucha.probiotic}}</td>
-      <td><button (click)="editKombucha(currentKombucha)">Edit!</button></td>
-    </tr>
-  </tbody>
-</table>
+  <table id="kombuchas" class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Probiotic content</th>
+        <th>Keg level</th>
+        <th>Pour a fresh pint!
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let currentKombucha of kombuchas">
+        <td>{{currentKombucha.name}}</td>
+        <td>{{currentKombucha.brand}}</td>
+        <td>$ {{currentKombucha.price}}</td>
+        <td>{{currentKombucha.probiotic}}</td>
+        <td>{{currentKombucha.pintLevel}} pints left</td>
+        <td><button (click)="pourPint(currentKombucha)">Pour!</button></td>
+        <td><button (click)="editKombucha(currentKombucha)">Edit!</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="selectedKombucha">
+    <h3 >Edit {{selectedKombucha.name}}</h3>
+    <label for="nameEdit">Name:</label>
+    <input type="text" id="nameEdit" [(ngModel)]="selectedKombucha.name">
+    <label for="brandEdit">Brand:</label>
+    <input type="text" id="brandEdit" [(ngModel)]="selectedKombucha.brand">
+    <label for="priceEdit">Price:</label>
+    <input type="text" id="priceEdit" [(ngModel)]="selectedKombucha.price">
+    <label for="probioticEdit">Probiotic:</label>
+    <input type="text" id="probioticEdit" [(ngModel)]="selectedKombucha.probiotic">
+    <button (click)="editKombucha()">Done Editing!</button>
+  </div>
+
+  <div *ngFor="let kombucha of kombuchas">
+    <div *ngIf="kombucha.pintLevel <= 120">
+      <h4>Time to restock{{kombucha.name}}!!!</h4>
+    </div>
+  </div>
+</div>
