@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Kombucha } from './models/kombucha.model';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',

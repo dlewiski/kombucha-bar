@@ -1,5 +1,4 @@
-# KombuchaBar
-## (2 day Angular project)
+# KombuchaBar, a 2 day Angular project
 
 ### by David Lewis and Ron Craig
 

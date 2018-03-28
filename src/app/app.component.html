@@ -5,10 +5,10 @@
         Welcome to {{ title }}!
       </h1>
     </div>
-  <img width="300" alt="Angular Logo" src="http://bistroonesix.com/wp-content/uploads/2015/12/Kombucha-Mike-Sommer.png"><br><br>
+  <img width="300" alt="Kombucha batches with a dapper gentleman" src="http://bistroonesix.com/wp-content/uploads/2015/12/Kombucha-Mike-Sommer.png"><br><br>
 </div>
 <div class="container">
-  <h2 style="text-align:center">Enjoy our natural, kombuchas.  More like kombubooom! </h2><br>
+  <h2 style="text-align:center">Enjoy our natural, kombuchas.  More like kombu-booom! </h2><br>
 
   <table id="kombuchas" class="table table-hover">
     <thead>
@@ -26,7 +26,7 @@
       <tr *ngFor="let currentKombucha of kombuchas">
         <td>{{currentKombucha.name}}</td>
         <td>{{currentKombucha.brand}}</td>
-        <td>$ {{currentKombucha.price}}</td>
+        <td>{{currentKombucha.price | currency }}</td>
         <td>{{currentKombucha.probiotic}}</td>
         <td>{{currentKombucha.pintLevel}} pints left</td>
         <td><button (click)="pourPint(currentKombucha)">Pour!</button></td>
@@ -35,7 +35,7 @@
     </tbody>
   </table>
   <div *ngIf="selectedKombucha">
-    <h3 >Edit {{selectedKombucha.name}}</h3>
+    <h3>Edit {{selectedKombucha.name}}</h3>
     <label for="nameEdit">Name:</label>
     <input type="text" id="nameEdit" [(ngModel)]="selectedKombucha.name">
     <label for="brandEdit">Brand:</label>
@@ -49,7 +49,7 @@
 
   <div *ngFor="let kombucha of kombuchas">
     <div *ngIf="kombucha.pintLevel <= 120">
-      <h4>Time to restock{{kombucha.name}}!!!</h4>
+      <h3 style="text-align:center">Time to restock {{kombucha.name}}!!!</h3>
     </div>
   </div>
 </div>
