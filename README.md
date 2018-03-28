@@ -1,4 +1,9 @@
 # KombuchaBar
+## (2 day Angular project)
+
+### by David Lewis and Ron Craig
+
+## An app displaying drinks at a Kombucha Bar.  Drink features and status will be displayed, edited and created.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
