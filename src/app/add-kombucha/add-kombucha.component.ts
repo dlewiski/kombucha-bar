@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Kombucha } from '../models/kombucha.model';
+
 
 @Component({
   selector: 'app-add-kombucha',
@@ -7,11 +8,13 @@ import { Kombucha } from '../models/kombucha.model';
   styleUrls: ['./add-kombucha.component.css']
 })
 export class AddKombuchaComponent {
-
-  @Input() childKambuchaList: Kombucha[];
+  @Output() sendKombucha = new EventEmitter();
+  submitForm(nameNew: string, brandNew: string, priceNew: string, probioticNew: string) {
+    let newKombucha: Kombucha = new Kombucha (nameNew, brandNew, parseInt(priceNew), parseInt(probioticNew));
+    this.sendKombucha.emit(newKombucha);
+  }
 
   constructor() { }
-
   ngOnInit() {
   }
 

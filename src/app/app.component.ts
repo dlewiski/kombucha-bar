@@ -32,10 +32,9 @@ export class AppComponent {
     this.selectedKombucha = null;
   }
 
-  // addKombucha(addNewKombucha){
-  //   this.addKombucha = addNewKombucha;
-  //   new Kombucha('null', 'null', 4, 4),
-  //   push
-  // }
+  addKombucha(newKombucha: Kombucha) {
+    this.kombuchas.push(newKombucha);
+  }
+
 
 }

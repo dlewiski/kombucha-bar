@@ -1,3 +1,14 @@
 <h4>
-  add-kombucha works!
+  <div>
+    <h3>Add New Kombucha</h3>
+    <label for="nameNew">Name:</label>
+    <input type="text" id="nameNew" #nameNew>
+    <label for="brandNew">Brand:</label>
+    <input type="text" id="brandNew" #brandNew>
+    <label for="priceNew">Price:</label>
+    <input type="text" id="priceNew" #priceNew>
+    <label for="probioticNew">Probiotic:</label>
+    <input type="text" id="probioticNew" #probioticNew>
+    <button (click)="submitForm(nameNew.value, brandNew.value, priceNew.value, probioticNew.value)">Add New Drank!</button>
+  </div>
 </h4>
