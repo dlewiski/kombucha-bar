@@ -12,11 +12,13 @@
 <div class="container">
   <h2 style="text-align:center">Enjoy our natural, kombuchas.  More like kombu-booom! </h2><br>
 
-  <app-kombucha-list [childKombuchaList]="kombuchas" (clickedPourPint)="pourPint($event)" (clickedEditKombucha)="editKombucha($event)"></app-kombucha-list>
+  <app-kombucha-list [childKombuchaList]="kombuchas" (clickedPourPint)="pourPint($event)" (clickedEditKombucha)="editKombucha($event)" (clickedRemove)="removeKombucha($event)"></app-kombucha-list>
 
   <app-add-kombucha (sendKombucha)="addKombucha($event)"></app-add-kombucha>
 
   <app-edit-kombucha [childSelectedKombucha]="selectedKombucha" (clickedDone)="finishedEditing()"></app-edit-kombucha>
+
+  <app-remove-kombucha></app-remove-kombucha>
 
   <div *ngFor="let kombucha of kombuchas">
     <div *ngIf="kombucha.pintLevel <= 120">
@@ -25,6 +27,6 @@
   </div>
 
   <br>
-  <button (click)="submitForm(nameNew.string, brandNew.string, priceNew.value, probioticNew.value); nameNew.string=''; brandNew.string='';  priceNew.value=''; probioticNew.value='';">Add new Kombucha!</button>
-  <button (click)="saveNewKombucha()">Save new Kombucha!</button>
+  <!-- <button (click)="submitForm(nameNew.string, brandNew.string, priceNew.value, probioticNew.value); nameNew.string=''; brandNew.string='';  priceNew.value=''; probioticNew.value='';">Add new Kombucha!</button>
+  <button (click)="saveNewKombucha()">Save new Kombucha!</button> -->
 </div>

@@ -36,5 +36,10 @@ export class AppComponent {
     this.kombuchas.push(newKombucha);
   }
 
+  removeKombucha(currentKombucha) {
+    let index = this.kombuchas.indexOf(currentKombucha);
+    this.kombuchas.splice(index, 1);
+  }
+
 
 }

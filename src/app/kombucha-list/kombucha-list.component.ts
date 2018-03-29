@@ -10,6 +10,7 @@ export class KombuchaListComponent {
   @Input() childKombuchaList: Kombucha[];
   @Output() clickedPourPint = new EventEmitter();
   @Output() clickedEditKombucha = new EventEmitter();
+  @Output() clickedRemove = new EventEmitter();
 
   pourPint(kombuchaToPour: Kombucha) {
     this.clickedPourPint.emit(kombuchaToPour);
@@ -19,6 +20,9 @@ export class KombuchaListComponent {
     this.clickedEditKombucha.emit(kombuchaToEdit);
   }
 
+  removeKombucha(kombuchaToDelete: Kombucha) {
+    this.clickedRemove.emit(kombuchaToDelete);
+  }
   constructor() { }
 
   ngOnInit() {

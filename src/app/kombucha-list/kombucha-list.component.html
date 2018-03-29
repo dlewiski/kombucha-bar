@@ -8,6 +8,7 @@
       <th>Keg level</th>
       <th>Pour a fresh pint!
       <th>Edit</th>
+      <th>Remove</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,7 @@
       <td>{{currentKombucha.pintLevel}} pints left</td>
       <td><button (click)="pourPint(currentKombucha)">Pour!</button></td>
       <td><button (click)="editKombucha(currentKombucha)">Edit!</button></td>
+      <td><button (click)="removeKombucha(currentKombucha)">Remove!</button></td>
     </tr>
   </tbody>
 </table>
