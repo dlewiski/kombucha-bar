@@ -12,10 +12,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let currentKombucha of childKombuchaList | completeness | happyHour:childHappyHour">
+    <tr *ngFor="let currentKombucha of childKombuchaList | happyHour:childHappyHour | completeness">
       <td>{{currentKombucha.name}}</td>
       <td>{{currentKombucha.brand}}</td>
-      <td>{{currentKombucha.price }}</td>
+      <td>{{currentKombucha.price | currency }}</td>
       <td style="text-align:center">{{currentKombucha.probiotic}}</td>
       <td>{{currentKombucha.pintLevel}} pints left</td>
       <td><button (click)="pourPint(currentKombucha)">Pour!</button></td>
