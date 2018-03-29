@@ -8,6 +8,8 @@ import { AddKombuchaComponent } from './add-kombucha/add-kombucha.component';
 import { EditKombuchaComponent } from './edit-kombucha/edit-kombucha.component';
 import { KombuchaListComponent } from './kombucha-list/kombucha-list.component';
 import { RemoveKombuchaComponent } from './remove-kombucha/remove-kombucha.component';
+import { CompletenessPipe } from './completeness.pipe';
+import { HappyHourPipe } from './happyHour.pipe'
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { RemoveKombuchaComponent } from './remove-kombucha/remove-kombucha.compo
     AddKombuchaComponent,
     EditKombuchaComponent,
     KombuchaListComponent,
-    RemoveKombuchaComponent
+    RemoveKombuchaComponent,
+    CompletenessPipe,
+    HappyHourPipe
   ],
   imports: [
     BrowserModule,

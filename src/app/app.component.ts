@@ -18,6 +18,7 @@ export class AppComponent {
   selectedKombucha = null;
   pouredKombucha = null;
   saveNewKombucha = null;
+  happyHour = false;
 
   editKombucha(currentKombucha){
     this.selectedKombucha = currentKombucha;
@@ -41,5 +42,13 @@ export class AppComponent {
     this.kombuchas.splice(index, 1);
   }
 
+  startHappyHour() {
+    this.happyHour = true;
+    console.log(this.happyHour);
+  }
+
+  endHappyHour() {
+    this.happyHour = false;
+  }
 
 }

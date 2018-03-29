@@ -1,3 +1,4 @@
+<h4>
 <div *ngIf="childSelectedKombucha">
   <h3>Edit {{childSelectedKombucha.name}}</h3>
   <label for="nameEdit">Name:</label>
@@ -10,3 +11,4 @@
   <input type="text" id="probioticEdit" [(ngModel)]="childSelectedKombucha.probiotic">
   <button (click)="finishedEditing()">Done Editing!</button>
 </div>
+</h4>

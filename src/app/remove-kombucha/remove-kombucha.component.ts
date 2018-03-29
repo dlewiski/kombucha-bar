@@ -13,6 +13,8 @@ export class RemoveKombuchaComponent {
   removeKombucha(kombuchaToDelete: Kombucha) {
     this.clickedRemove.emit(kombuchaToDelete);
   }
+
+
   constructor() { }
 
   ngOnInit() {

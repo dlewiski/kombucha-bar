@@ -8,6 +8,7 @@ import { Kombucha } from '../models/kombucha.model';
 })
 export class KombuchaListComponent {
   @Input() childKombuchaList: Kombucha[];
+  @Input() childHappyHour: boolean;
   @Output() clickedPourPint = new EventEmitter();
   @Output() clickedEditKombucha = new EventEmitter();
   @Output() clickedRemove = new EventEmitter();

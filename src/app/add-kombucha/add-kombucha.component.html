@@ -9,6 +9,6 @@
     <input type="text" id="priceNew" #priceNew>
     <label for="probioticNew">Probiotic:</label>
     <input type="text" id="probioticNew" #probioticNew>
-    <button (click)="submitForm(nameNew.value, brandNew.value, priceNew.value, probioticNew.value)">Add New Drank!</button>
+    <button (click)="submitForm(nameNew.value, brandNew.value, priceNew.value, probioticNew.value); nameNew.value=''; brandNew.value=''; priceNew.value=''; probioticNew.value='';">Add New Drank!</button>
   </div>
 </h4>
